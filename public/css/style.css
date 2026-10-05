@@ -1,0 +1,39 @@
+:root { --dark:#3a3633; --stone:#8d877e; --panel:rgba(122,100,48,.85); --cream:#f5efe6; --brown:#5e3a12; }
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; color: var(--cream);
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--stone) url("../images/coffee-bg.jpg") center / cover fixed;
+}
+.nav { position:sticky; top:0; z-index:10; display:flex; align-items:center; justify-content:space-between; padding:0 2rem; height:80px; background:rgba(58,54,51,.9); backdrop-filter:blur(8px); }
+.logo { font: italic 700 2rem "Brush Script MT","Segoe Script",cursive; color:var(--cream); text-decoration:none; }
+.nav nav { position:absolute; left:50%; transform:translateX(-50%); display:flex; gap:1.5rem; }
+.nav nav a { color:var(--cream); text-decoration:none; text-transform:uppercase; }
+.nav nav a:hover, a:focus-visible { text-decoration:underline; }
+main { padding: 2rem; max-width: 1200px; margin: 0 auto; }
+.panel { background: var(--panel); padding: 2rem; }
+.center { text-align:center; }
+.hero { margin-top: 28vh; max-width: 70%; }
+.hero h1 { font-size: 3rem; margin:0 0 1rem; }
+.hero a { color:var(--cream); }
+.split { display:grid; grid-template-columns: 1fr 1fr; gap:2rem; }
+.split img { width:100%; height:100%; object-fit:cover; min-height:300px; }
+.split h2 { margin-top:1.5rem; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
+.card { background:var(--panel); }
+.card img { width:100%; aspect-ratio:3/4; object-fit:cover; display:block; }
+.card div { padding:.8rem; text-align:center; }
+.card h3 { margin:0 0 .3rem; }
+.filter { display:flex; gap:1rem; justify-content:center; margin:1rem 0 1.5rem; }
+label { display:block; margin:1rem 0 .4rem; font-weight:bold; }
+.filter label { margin:0; }
+input, select, textarea { width:100%; padding:.8rem; border:0; border-radius:8px; font:inherit; background:#fafafa; }
+.filter input, .filter select { width:auto; }
+button { width:100%; margin-top:1.5rem; padding:1rem; border:0; border-radius:8px; background:var(--brown); color:#fff; font-weight:bold; font-size:1rem; cursor:pointer; }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline:3px solid #fff; }
+@media (max-width:800px) {
+  .split { grid-template-columns:1fr; }
+  .hero { max-width:100%; margin-top:10vh; }
+  .nav { flex-direction:column; height:auto; padding:1rem; gap:.5rem; }
+  .nav nav { position:static; transform:none; }
+}
